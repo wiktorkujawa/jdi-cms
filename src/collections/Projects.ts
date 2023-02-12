@@ -6,6 +6,9 @@ const Projects: CollectionConfig = {
   admin: {
     useAsTitle: "Name",
   },
+  access: {
+    read: () => true,
+  },
   fields: [
     {
       name: "name",

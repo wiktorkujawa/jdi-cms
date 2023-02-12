@@ -1,7 +1,6 @@
 import { buildConfig } from "payload/config";
 import path from "path";
-import { Users, Media, Pages } from "./collections";
-import Projects from "./collections/Projects";
+import { Users, Media, Pages, Projects } from "./collections";
 import cloudinaryPlugin from "payload-cloudinary-plugin/dist/plugins";
 
 export default buildConfig({
