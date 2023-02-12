@@ -5,7 +5,7 @@ import Projects from "./collections/Projects";
 import cloudinaryPlugin from "payload-cloudinary-plugin/dist/plugins";
 
 export default buildConfig({
-  serverURL: "http://localhost:3000",
+  serverURL: process.env.PAYLOAD_PUBLIC_SERVER_URL,
   plugins: [cloudinaryPlugin()],
   admin: {
     user: Users.slug,
