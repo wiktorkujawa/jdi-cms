@@ -13,6 +13,7 @@ const Projects: CollectionConfig = {
     {
       name: "name",
       type: "text",
+      unique: true
     },
     {
       name: "description",

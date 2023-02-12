@@ -13,10 +13,12 @@ const Pages: CollectionConfig = {
     {
       name: "name",
       type: "text",
+      unique: true,
     },
     {
       name: "slug",
       type: "text",
+      unique: true
     },
     {
       name: "customComponents",
