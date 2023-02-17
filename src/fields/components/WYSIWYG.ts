@@ -4,7 +4,7 @@ const WYSIWYG: Block = {
   slug: 'WYSIWYG', // required
   // imageURL: 'https://google.com/path/to/image.jpg',
   imageAltText: 'WYSIWYG component',
-  fields: [ // required
+  fields: [
     {
       name: 'copy',
       type: 'richText',
