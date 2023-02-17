@@ -4,6 +4,9 @@ import { Users, Media, Pages, Projects } from "./collections";
 import cloudinaryPlugin from "payload-cloudinary-plugin/dist/plugins";
 
 export default buildConfig({
+  rateLimit: {
+    trustProxy: true,
+  },
   serverURL: process.env.PAYLOAD_PUBLIC_SERVER_URL,
   plugins: [cloudinaryPlugin()],
   admin: {
