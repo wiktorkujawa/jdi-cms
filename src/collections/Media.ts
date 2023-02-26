@@ -25,16 +25,25 @@ const Media: CollectionConfig = {
       {
         name: 'tablet',
         width: 1024,
-        // By specifying `null` or leaving a height undefined,
-        // the image will be sized to a certain width,
-        // but it will retain its original aspect ratio
-        // and calculate a height automatically.
         height: null,
         position: 'centre',
       },
     ],
     adminThumbnail: 'thumbnail',
-    // mimeTypes: ['image/*'],
+  },
+  hooks: {
+    afterRead: [
+      ({ doc: { url,sizes, cloudinary: { format, public_id } } }) => {
+        const bucket_url = `https://res.cloudinary.com/${process.env.CLOUD_NAME}/image/upload/`;
+        // add a url property on the main image
+        url = `${bucket_url}${public_id}.${format}`
+        // add a url property on each imageSize
+        Object.keys(sizes)
+        .forEach(k => {
+          sizes[k].url = `${bucket_url}w_${sizes[k].width},h_${sizes[k].height},c_limit/${public_id}.${format}`
+        })
+      }
+    ]
   },
   fields: []
 };
