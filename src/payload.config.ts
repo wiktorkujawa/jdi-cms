@@ -24,4 +24,9 @@ export default buildConfig({
   graphQL: {
     schemaOutputFile: path.resolve(__dirname, "generated-schema.graphql"),
   },
+  upload: {
+    limits: {
+      fileSize: 1000000, // 1MB, written in bytes
+    },
+  },
 });
