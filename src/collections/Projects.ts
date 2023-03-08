@@ -24,6 +24,11 @@ const Projects: CollectionConfig = {
       type: "upload",
       relationTo: 'media'
     },
+    {
+      label: "Media URL",
+      name: "mediaUrl",
+      type: "text"
+    },
     Button
   ],
 };
