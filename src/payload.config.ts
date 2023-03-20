@@ -1,6 +1,6 @@
 import { buildConfig } from "payload/config";
 import path from "path";
-import { Users, Media, Pages, Projects } from "./collections";
+import { Users, Media, Pages, Projects, Navigation } from "./collections";
 import cloudinaryPlugin from "payload-cloudinary-plugin/dist/plugins";
 
 export default buildConfig({
@@ -16,7 +16,8 @@ export default buildConfig({
     Users,
     Pages,
     Media,
-    Projects
+    Projects,
+    Navigation
   ],
   typescript: {
     outputFile: path.resolve(__dirname, "payload-types.ts"),
