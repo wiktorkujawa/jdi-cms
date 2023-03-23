@@ -1,11 +1,7 @@
-import { CollectionConfig } from "payload/types";
-import { Button } from "../fields/elements";
+import { GlobalConfig } from "payload/types";
 
-const Navigation: CollectionConfig = {
+const Navigation: GlobalConfig = {
   slug: "navigation",
-  admin: {
-    useAsTitle: "Name",
-  },
   access: {
     read: () => true,
   },
