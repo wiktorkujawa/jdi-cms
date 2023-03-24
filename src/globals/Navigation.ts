@@ -16,6 +16,7 @@ const Navigation: GlobalConfig = {
             {
               name: "page",
               type: "relationship",
+              hasMany: true,
               unique: true,
               relationTo: "pages",
             },
@@ -26,18 +27,30 @@ const Navigation: GlobalConfig = {
           description: "Custom navigation",
           fields: [
             {
-              name: "slug",
-              type: "text",
-              unique: true,
-            },
-            {
-              name: "name",
-              type: "text",
-              unique: true,
+              type: "array",
+              name: "pages",
+              fields: [
+                {
+                  name: "slug",
+                  type: "text",
+                  unique: true,
+                },
+                {
+                  name: "name",
+                  type: "text",
+                  unique: true,
+                },
+              ],
             },
           ],
         },
       ],
+    },
+    {
+      type: "relationship",
+      hasMany: true,
+      relationTo: "socials",
+      name: "socials",
     },
   ],
 };

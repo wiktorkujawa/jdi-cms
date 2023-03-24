@@ -1,6 +1,8 @@
 import { buildConfig } from "payload/config";
 import path from "path";
-import { Users, Media, Pages, Projects, Navigation, Footer } from "./collections";
+import { Users, Media, Pages, Projects, Socials } from "./collections";
+import { Navigation, Footer } from "./globals";
+
 import cloudinaryPlugin from "payload-cloudinary-plugin/dist/plugins";
 
 export default buildConfig({
@@ -16,7 +18,8 @@ export default buildConfig({
     Users,
     Pages,
     Media,
-    Projects
+    Projects,
+    Socials
   ],
   globals: [
     Navigation,

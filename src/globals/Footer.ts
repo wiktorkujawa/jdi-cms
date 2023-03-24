@@ -46,6 +46,12 @@ const Footer: GlobalConfig = {
           name: 'email'
         }
       ]
+    },
+    {
+      type: 'relationship',
+      hasMany: true,
+      relationTo: 'socials',
+      name: 'socials'
     }
   ],
 };
