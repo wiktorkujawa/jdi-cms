@@ -1,7 +1,7 @@
 import { buildConfig } from "payload/config";
 import path from "path";
 import { Users, Media, Pages, Projects, Socials } from "./collections";
-import { Navigation, Footer, Experience } from "./globals";
+import { Navigation, Footer, Experience, Education } from "./globals";
 
 import cloudinaryPlugin from "payload-cloudinary-plugin/dist/plugins";
 
@@ -24,7 +24,8 @@ export default buildConfig({
   globals: [
     Navigation,
     Footer,
-    Experience
+    Experience,
+    Education
   ],
   typescript: {
     outputFile: path.resolve(__dirname, "payload-types.ts"),
