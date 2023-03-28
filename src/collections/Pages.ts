@@ -1,5 +1,5 @@
 import { CollectionConfig } from "payload/types";
-import { WYSIWYG, Quote } from "../fields/components";
+import { WYSIWYG, Quote, Banner, HeadingCopyBlock, HeadingBlock } from "../fields/components";
 
 const Pages: CollectionConfig = {
   slug: "pages",
@@ -26,7 +26,10 @@ const Pages: CollectionConfig = {
       maxRows: 20,
       blocks: [
         WYSIWYG,
-        Quote
+        Quote,
+        Banner,
+        HeadingCopyBlock,
+        HeadingBlock
       ],
     }
   ],

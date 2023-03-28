@@ -1,7 +1,7 @@
 import { Block } from "payload/types";
 
 const Banner: Block = {
-  slug: 'heading', // required
+  slug: 'Banner', // required
   // imageURL: 'https://google.com/path/to/image.jpg',
   // imageAltText: 'A nice thumbnail image to show what this block looks like',
   fields: [ // required

@@ -19,7 +19,7 @@ const Experience: GlobalConfig = {
           name: 'position'
         },
         {
-          type: 'text',
+          type: 'textarea',
           name: 'description'
         }
       ]
