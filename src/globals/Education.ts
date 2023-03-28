@@ -19,7 +19,7 @@ const Education: GlobalConfig = {
           name: 'name'
         },
         {
-          type: 'text',
+          type: 'textarea',
           name: 'description'
         }
       ]

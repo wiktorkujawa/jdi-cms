@@ -1,7 +1,7 @@
 import { Block } from "payload/types";
 
 const Quote: Block = {
-  slug: 'quote', // required
+  slug: 'Quote', // required
   // imageURL: 'https://google.com/path/to/image.jpg',
   // imageAltText: 'A nice thumbnail image to show what this block looks like',
   fields: [ // required
