@@ -9,6 +9,19 @@ const Pages: CollectionConfig = {
   access: {
     read: () => true,
   },
+  hooks: {
+    afterChange: [async ({doc}) => { 
+      const res = await fetch(`${process.env.APP_URL}api/revalidate?secret=${process.env.MY_SECRET_TOKEN}`, {
+        method: 'POST',
+        body: JSON.stringify({
+          slug: doc.slug
+        })
+      })
+      const data = await res.json();
+      console.log(data);
+    
+    }]
+  },
   fields: [
     {
       name: "name",
