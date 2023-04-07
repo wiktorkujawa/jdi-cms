@@ -6,6 +6,15 @@ import { Navigation, Footer, Experience, Education, Brief } from "./globals";
 import cloudinaryPlugin from "payload-cloudinary-plugin/dist/plugins";
 import seo from "@payloadcms/plugin-seo";
 
+// interface IPage {
+//   name: {
+//     value: string
+//   },
+//   slug: {
+//     value: string
+//   },
+// }
+
 export default buildConfig({
   rateLimit: {
     trustProxy: true,
@@ -16,13 +25,13 @@ export default buildConfig({
     seo({
       collections: ["pages"],
       uploadsCollection: "media",
-      generateTitle: ({ doc }) => {
+      generateTitle: ({ doc }: any) => {
         return `just-dev-it.com — ${doc?.name?.value}`;
       },
       generateDescription: ({ doc }) => {
         return "Lorem ipsum";
       },
-      generateURL: ({ doc, locale }) =>
+      generateURL: ({ doc, locale }: any ) =>
         `https://just-dev-it.com/${doc?.fields?.slug?.value}`,
     }),
   ],
