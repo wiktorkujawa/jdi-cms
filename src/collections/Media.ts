@@ -33,7 +33,7 @@ const Media: CollectionConfig = {
   },
   hooks: {
     afterRead: [
-      ({ doc: { url,sizes, width, height, cloudinary: { format, public_id, resource_type} } }) => {
+      ({ doc: { url,sizes, width, height, filename, cloudinary: { format, public_id, resource_type} } }) => {
         const bucket_url = `https://res.cloudinary.com/${process.env.CLOUD_NAME}/${resource_type}/upload/`;
         // add a url property on the main image
         url = `${bucket_url}${public_id}.${format}`
@@ -43,6 +43,9 @@ const Media: CollectionConfig = {
           Object.keys(sizes)
           .forEach(k => {
             sizes[k].url = `${bucket_url}w_${sizes[k].width || width},h_${sizes[k].height || height},c_limit/${public_id}.${format}`
+            sizes[k].width = sizes[k].width || width;
+            sizes[k].height = sizes[k].height || height;
+            sizes[k].filename = sizes[k].filename || filename;
           })
         }
       }
