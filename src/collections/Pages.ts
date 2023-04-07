@@ -9,19 +9,23 @@ const Pages: CollectionConfig = {
   access: {
     read: () => true,
   },
-  hooks: {
-    afterChange: [async ({doc}) => { 
-      const res = await fetch(`${process.env.APP_URL}api/revalidate?secret=${process.env.MY_SECRET_TOKEN}`, {
-        method: 'POST',
-        body: JSON.stringify({
-          slug: doc.slug
-        })
-      })
-      const data = await res.json();
-      console.log(data);
+  // Using next13 appdir aproach doesn't allow on demand revalidation at the moment
+  // hooks: {
+  //   afterChange: [async ({doc}) => { 
+  //     const res = await fetch(`${process.env.APP_URL}api/revalidate?secret=${process.env.MY_SECRET_TOKEN}`, {
+  //       method: 'POST',
+  //       headers: {
+  //         'Content-Type': 'application/json',
+  //       },
+  //       body: JSON.stringify({
+  //         slug: doc.slug
+  //       })
+  //     })
+  //     const data = await res.json();
+  //     console.log(data);
     
-    }]
-  },
+  //   }]
+  // },
   fields: [
     {
       name: "name",
