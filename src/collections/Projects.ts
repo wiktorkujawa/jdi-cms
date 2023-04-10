@@ -4,7 +4,7 @@ import { Button } from "../fields/elements";
 const Projects: CollectionConfig = {
   slug: "projects",
   admin: {
-    useAsTitle: "Name",
+    useAsTitle: "name",
   },
   access: {
     read: () => true,
