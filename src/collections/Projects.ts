@@ -13,7 +13,7 @@ const Projects: CollectionConfig = {
     {
       name: "name",
       type: "text",
-      unique: true
+      unique: true,
     },
     {
       name: "description",
@@ -22,14 +22,14 @@ const Projects: CollectionConfig = {
     {
       name: "media",
       type: "upload",
-      relationTo: 'media'
+      relationTo: "media",
     },
     {
       label: "Media URL",
       name: "mediaUrl",
-      type: "text"
+      type: "text",
     },
-    Button
+    Button,
   ],
 };
 
