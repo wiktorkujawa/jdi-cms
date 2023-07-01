@@ -47,6 +47,12 @@ const Pages: CollectionConfig = {
         HeadingCopyBlock,
         HeadingBlock
       ],
+    },
+    {
+      name: 'subpages',
+      type: 'relationship',
+      relationTo: 'pages',
+      hasMany: true
     }
   ],
 };
