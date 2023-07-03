@@ -48,7 +48,7 @@ export default buildConfig({
   },
   upload: {
     limits: {
-      fileSize: 1000000, // 1MB, written in bytes
+      fileSize: 10000000, // 10MB, written in bytes
     },
   },
 });
