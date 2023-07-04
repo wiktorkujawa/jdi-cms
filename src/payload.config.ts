@@ -38,6 +38,7 @@ export default buildConfig({
   admin: {
     user: Users.slug,
   },
+  cors: ['*'],
   collections: [Users, Pages, Media, Projects, Socials],
   globals: [Navigation, Footer, Brief, Experience, Education, ProjectList],
   typescript: {
