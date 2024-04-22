@@ -45,7 +45,13 @@ const Projects: CollectionConfig = {
       name: "mediaUrl",
       type: "text",
     },
-    Button,
+      {
+        type: "array",
+        name: "buttons",
+        fields: [
+          Button,
+        ],
+      },
   ],
 };
 
