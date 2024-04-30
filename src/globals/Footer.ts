@@ -54,6 +54,20 @@ const Footer: GlobalConfig = {
       name: 'socials'
     }
   ],
+  hooks: {
+    afterChange: [async () => { 
+      await fetch(`${process.env.APP_URL}api/revalidate-tag?secret=${process.env.MY_SECRET_TOKEN}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          tag: 'footer'
+        })
+      })
+    
+    }]
+  },
 };
 
 export default Footer;
