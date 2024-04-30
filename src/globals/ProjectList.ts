@@ -8,17 +8,15 @@ const ProjectList: GlobalConfig = {
   },
   hooks: {
     afterChange: [async () => { 
-      const res = await fetch(`${process.env.APP_URL}api/revalidate?secret=${process.env.MY_SECRET_TOKEN}`, {
+      await fetch(`${process.env.APP_URL}api/revalidate-tag?secret=${process.env.MY_SECRET_TOKEN}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          slug: '/'
+          tag: 'projectsList'
         })
       })
-      const data = await res.json();
-      console.log(data);
     
     }]
   },

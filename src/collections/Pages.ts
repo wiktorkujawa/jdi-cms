@@ -11,7 +11,7 @@ const Pages: CollectionConfig = {
   },
   hooks: {
     afterChange: [async ({doc}) => { 
-      const res = await fetch(`${process.env.APP_URL}api/revalidate?secret=${process.env.MY_SECRET_TOKEN}`, {
+      await fetch(`${process.env.APP_URL}api/revalidate?secret=${process.env.MY_SECRET_TOKEN}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -20,8 +20,6 @@ const Pages: CollectionConfig = {
           slug: doc.slug
         })
       })
-      const data = await res.json();
-      console.log(data);
     
     }]
   },
