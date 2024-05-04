@@ -1,5 +1,6 @@
 import { CollectionConfig } from "payload/types";
 import { WYSIWYG, Quote, Banner, HeadingCopyBlock, HeadingBlock } from "../fields/components";
+import Slider from "../fields/components/Slider";
 
 const Pages: CollectionConfig = {
   slug: "pages",
@@ -35,6 +36,22 @@ const Pages: CollectionConfig = {
       unique: true
     },
     {
+      name: "isMasthead",
+      type: "checkbox",
+      defaultValue: false,
+    },
+    {
+      name: "masthead",
+      type: "blocks",
+      blocks: [Slider],
+      maxRows: 1,
+      minRows: 1,
+      admin: {
+        condition: (data) => data.isMasthead,
+      },
+    },
+
+    {
       name: "customComponents",
       type: "blocks",
       maxRows: 20,
@@ -43,7 +60,8 @@ const Pages: CollectionConfig = {
         Quote,
         Banner,
         HeadingCopyBlock,
-        HeadingBlock
+        HeadingBlock,
+        Slider
       ],
     },
     {
