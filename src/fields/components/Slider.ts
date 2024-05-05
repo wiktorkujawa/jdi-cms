@@ -17,49 +17,58 @@ const Slider: Block = {
         {
           name: 'heading',
           type: 'text',
-        },  
+        },
         {
           name: 'copy',
           type: 'richText',
+        },
+        {
+          name: 'attribution',
+          type: 'text',
         },
         Button
       ]
     },
     {
-        name: 'settings',
-        type: 'group',
-        fields: [
-            {
-                name: 'dots',
-                type: 'checkbox',
-                defaultValue: false,
-            },
-            {
-                name: 'arrows',
-                type: 'checkbox',
-                defaultValue: false
-            },
-            {
-                name: 'autoplay',
-                type: 'checkbox',
-                defaultValue: false,
-            },
-            {
-                name: 'autoplaySpeed',
-                type: 'number',
-                admin: {
-                    condition: (data, siblingData) => siblingData.autoplay,
-                },
-                defaultValue: 3000,
-                min: 1000,
-            },
-            {
-                name: 'slidesPerRow',
-                type: 'number',
-                defaultValue: 1,
-                min: 1
-            }
-        ],
+      name: 'settings',
+      type: 'group',
+      fields: [
+        {
+          name: 'dots',
+          type: 'checkbox',
+          defaultValue: false,
+        },
+        {
+          name: 'arrows',
+          type: 'checkbox',
+          defaultValue: false
+        },
+        {
+          name: 'draggable',
+          type: 'checkbox',
+          defaultValue: false
+        },
+        {
+          name: 'autoplay',
+          type: 'checkbox',
+          defaultValue: false,
+        },
+        {
+          name: 'autoplaySpeed',
+          type: 'number',
+          admin: {
+            condition: (data, siblingData) => siblingData.autoplay,
+          },
+          defaultValue: 3000,
+          min: 1000,
+        },
+        {
+          name: 'slidesPerRow',
+          type: 'number',
+          defaultValue: 1,
+          min: 1
+        }
+      ],
     },
   ]
 };
