@@ -18,10 +18,9 @@ const Pages: CollectionConfig = {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          slug: doc.slug
+          slug: doc.slug || '/'
         })
       })
-    
     }]
   },
   fields: [
