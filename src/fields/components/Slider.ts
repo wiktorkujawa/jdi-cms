@@ -39,6 +39,11 @@ const Slider: Block = {
           defaultValue: false,
         },
         {
+          name: 'loop',
+          type: 'checkbox',
+          defaultValue: false,
+        },
+        {
           name: 'arrows',
           type: 'checkbox',
           defaultValue: false
