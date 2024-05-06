@@ -3,5 +3,6 @@ export { default as Quote } from './Quote';
 export { default as Banner } from './Banner';
 export { default as HeadingBlock } from './HeadingBlock';
 export { default as HeadingCopyBlock } from './HeadingCopyBlock';
+export { default as Slider } from './Slider';
 
 
