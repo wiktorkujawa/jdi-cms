@@ -1,6 +1,8 @@
 import { CollectionConfig } from "payload/types";
 import { WYSIWYG, Quote, Banner, HeadingCopyBlock, HeadingBlock } from "../fields/components";
-import Slider from "../fields/components/Slider";
+import { MastheadSlider } from "../fields/elements";
+import { Slider } from "../fields/components";
+
 
 const Pages: CollectionConfig = {
   slug: "pages",
@@ -11,7 +13,7 @@ const Pages: CollectionConfig = {
     read: () => true,
   },
   hooks: {
-    afterChange: [async ({doc}) => { 
+    afterChange: [async ({ doc }) => {
       await fetch(`${process.env.APP_URL}api/revalidate?secret=${process.env.MY_SECRET_TOKEN}`, {
         method: 'POST',
         headers: {
@@ -39,17 +41,7 @@ const Pages: CollectionConfig = {
       type: "checkbox",
       defaultValue: false,
     },
-    {
-      name: "masthead",
-      type: "blocks",
-      blocks: [Slider],
-      maxRows: 1,
-      minRows: 1,
-      admin: {
-        condition: (data) => data.isMasthead,
-      },
-    },
-
+    MastheadSlider,
     {
       name: "customComponents",
       type: "blocks",
