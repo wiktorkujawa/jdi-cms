@@ -5,7 +5,7 @@ const MastheadSlider: GroupField = {
     name: 'mastheadSlider',
     type: 'group',
     admin: {
-        condition: (data) => data.isMasthead,
+        condition: (data) => data.isMasthead && data.feature === 'slider',
     },
     fields: [
         {
