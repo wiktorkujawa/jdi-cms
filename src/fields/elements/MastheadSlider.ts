@@ -34,103 +34,108 @@ const MastheadSlider: GroupField = {
             ]
         },
         {
-            label: 'settings',
-            type: 'tabs',
-            tabs: [
+            type: 'group',
+            name: 'settings',
+            fields: [
                 {
-                    label: 'Desktop',
-                    name: 'desktop',
-                    fields: [
+                    label: 'settings',
+                    type: 'tabs',
+                    tabs: [
                         {
-                            name: 'dots',
-                            type: 'checkbox',
-                            defaultValue: false,
+                            label: 'Desktop',
+                            name: 'desktop',
+                            fields: [
+                                {
+                                    name: 'dots',
+                                    type: 'checkbox',
+                                    defaultValue: false,
+                                },
+                                {
+                                    name: 'loop',
+                                    type: 'checkbox',
+                                    defaultValue: false,
+                                },
+                                {
+                                    name: 'arrows',
+                                    type: 'checkbox',
+                                    defaultValue: false
+                                },
+                                {
+                                    name: 'draggable',
+                                    type: 'checkbox',
+                                    defaultValue: false
+                                },
+                                {
+                                    name: 'autoplay',
+                                    type: 'checkbox',
+                                    defaultValue: false,
+                                },
+                                {
+                                    name: 'autoplaySpeed',
+                                    type: 'number',
+                                    admin: {
+                                        condition: (_, siblingData) => siblingData.autoplay,
+                                    },
+                                    defaultValue: 3000,
+                                    min: 1000,
+                                },
+                                {
+                                    name: 'slidesPerRow',
+                                    type: 'number',
+                                    defaultValue: 1,
+                                    min: 1
+                                }
+                            ]
                         },
                         {
-                            name: 'loop',
-                            type: 'checkbox',
-                            defaultValue: false,
-                        },
-                        {
-                            name: 'arrows',
-                            type: 'checkbox',
-                            defaultValue: false
-                        },
-                        {
-                            name: 'draggable',
-                            type: 'checkbox',
-                            defaultValue: false
-                        },
-                        {
-                            name: 'autoplay',
-                            type: 'checkbox',
-                            defaultValue: false,
-                        },
-                        {
-                            name: 'autoplaySpeed',
-                            type: 'number',
-                            admin: {
-                                condition: (_, siblingData) => siblingData.autoplay,
-                            },
-                            defaultValue: 3000,
-                            min: 1000,
-                        },
-                        {
-                            name: 'slidesPerRow',
-                            type: 'number',
-                            defaultValue: 1,
-                            min: 1
+                            label: 'Mobile',
+                            name: 'mobile',
+                            fields: [
+                                {
+                                    name: 'dots',
+                                    type: 'checkbox',
+                                    defaultValue: false,
+                                },
+                                {
+                                    name: 'loop',
+                                    type: 'checkbox',
+                                    defaultValue: false,
+                                },
+                                {
+                                    name: 'arrows',
+                                    type: 'checkbox',
+                                    defaultValue: false
+                                },
+                                {
+                                    name: 'draggable',
+                                    type: 'checkbox',
+                                    defaultValue: false
+                                },
+                                {
+                                    name: 'autoplay',
+                                    type: 'checkbox',
+                                    defaultValue: false,
+                                },
+                                {
+                                    name: 'autoplaySpeed',
+                                    type: 'number',
+                                    admin: {
+                                        condition: (_, siblingData) => siblingData.autoplay,
+                                    },
+                                    defaultValue: 3000,
+                                    min: 1000,
+                                },
+                                {
+                                    name: 'slidesPerRow',
+                                    type: 'number',
+                                    defaultValue: 1,
+                                    min: 1
+                                }
+                            ]
                         }
-                    ]
-                },
-                {
-                    label: 'Mobile',
-                    name: 'mobile',
-                    fields: [
-                        {
-                            name: 'dots',
-                            type: 'checkbox',
-                            defaultValue: false,
-                        },
-                        {
-                            name: 'loop',
-                            type: 'checkbox',
-                            defaultValue: false,
-                        },
-                        {
-                            name: 'arrows',
-                            type: 'checkbox',
-                            defaultValue: false
-                        },
-                        {
-                            name: 'draggable',
-                            type: 'checkbox',
-                            defaultValue: false
-                        },
-                        {
-                            name: 'autoplay',
-                            type: 'checkbox',
-                            defaultValue: false,
-                        },
-                        {
-                            name: 'autoplaySpeed',
-                            type: 'number',
-                            admin: {
-                                condition: (_, siblingData) => siblingData.autoplay,
-                            },
-                            defaultValue: 3000,
-                            min: 1000,
-                        },
-                        {
-                            name: 'slidesPerRow',
-                            type: 'number',
-                            defaultValue: 1,
-                            min: 1
-                        }
-                    ]
-                }
-            ],
-        },
+                    ],
+                }],
+        }
     ]
 };
 
